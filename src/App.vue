@@ -1,14 +1,28 @@
-<script setup>
+<script>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import TheBoard from './components/TheBoard.vue'
 import TheNavbar from './components/TheNavbar.vue'
+export default{
+  data:()=>({
+    score:0,
+  }),
+  components:{
+    TheBoard,
+    TheNavbar,
+  },
+  methods:{
+    changeScore(d){
+      this.score=this.score+d
+    }
+  }
+}
 </script>
 
 <template>
   <br>
-  <TheNavbar />
-  <TheBoard />
+  <TheNavbar :score='score' />
+  <TheBoard @change-score='changeScore' />
 </template>
 
 <style>

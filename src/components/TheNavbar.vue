@@ -12,9 +12,13 @@
 
 <script>
 export default {
- data:()=>({
-   score:12,
- })
+  props:{
+    score:{
+      type:Number
+    }
+  },
+  data:()=>({
+  })
 }
 </script>
 
